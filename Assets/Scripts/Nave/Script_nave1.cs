@@ -92,7 +92,7 @@ public class Script_nave1 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
         {
-            turbo = 4.0f;
+            turbo = 15.0f;
         }
         else
         {

@@ -14,7 +14,7 @@ public class Script_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var speed = 0f;
+        var speed = 2f;
         transform.Rotate(Vector3.up, (float)(Time.deltaTime * speed));
     }
 }
