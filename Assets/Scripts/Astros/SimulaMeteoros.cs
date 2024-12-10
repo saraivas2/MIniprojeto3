@@ -15,7 +15,6 @@ public class MeteorSpawner : MonoBehaviour
 
     void Start()
     {
-        // Gera meteoros em intervalos regulares
         InvokeRepeating(nameof(SpawnMeteors), 5f, 10f);
         nave = GameObject.FindWithTag("nave");
         meteoroPrefab = Resources.Load("cometas") as GameObject;
@@ -28,7 +27,6 @@ public class MeteorSpawner : MonoBehaviour
             Vector3 spawnPosition = GenerateSpawnPosition();
             GameObject meteoro = Instantiate(meteoroPrefab, spawnPosition, Quaternion.identity);
 
-            // Trajetória parabólica
             Vector3 targetPosition = nave.transform.position + Random.onUnitSphere * safeDistance; 
             StartCoroutine(MoveMeteorParabolic(meteoro, spawnPosition, targetPosition));
         }
@@ -36,7 +34,6 @@ public class MeteorSpawner : MonoBehaviour
 
     Vector3 GenerateSpawnPosition()
     {
-        // Gera uma posição ao redor da nave fora da safeDistance
         Vector3 offset = Random.onUnitSphere * spawnRadius;
         return nave.transform.position + offset;
     }
@@ -50,7 +47,6 @@ public class MeteorSpawner : MonoBehaviour
         {
             time += Time.deltaTime / duration;
 
-            // Fórmula para a parábola
             Vector3 midPoint = Vector3.Lerp(start, end, time);
             midPoint.y += Mathf.Sin(time * Mathf.PI) * parabolaHeight;
 
