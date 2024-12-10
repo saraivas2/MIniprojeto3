@@ -27437,7 +27437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3e74b947a5a004f923eb59980714c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countObj: 10
+  countObj: 0
   coleta: 0
 --- !u!136 &2100726998
 CapsuleCollider:

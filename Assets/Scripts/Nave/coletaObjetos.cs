@@ -6,7 +6,7 @@ using UnityEngine;
 public class coletaObjetos : MonoBehaviour
 {
     private GameObject objetos;
-    public int countObj = 10;
+    public int countObj = 0;
     public bool coleta = false;
     private TextMeshProUGUI texto;
     
