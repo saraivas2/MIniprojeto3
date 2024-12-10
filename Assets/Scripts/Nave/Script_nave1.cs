@@ -11,6 +11,7 @@ public class Script_nave1 : MonoBehaviour
     private float aceleracao = 1.5f;
     private float turbo = 1.0f;
     private Vector3 direcao;
+    private Rigidbody rb;
     private float mouseX = 0.0f, mouseY = 0.0f;
     [SerializeField] private Camera camera;
     public float field;
@@ -22,9 +23,10 @@ public class Script_nave1 : MonoBehaviour
     }
     void Start()
     {
-        velocidade = 2;
+        velocidade = 1.2f;
         direcao = Vector3.zero;
         camera = camera.GetComponent<Camera>(); 
+        rb = GetComponent<Rigidbody>();
 
         if (!travarMouse)
         {
@@ -36,8 +38,7 @@ public class Script_nave1 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        //transform.eulerAngles = new Vector3(transform.eulerAngles.x, camera.eulerAngles.y, transform.eulerAngles.z);
+    { 
         InputPersonagem();
         transform.Translate(direcao * velocidade * Time.deltaTime);
         if (Input.GetMouseButton(0))
@@ -112,7 +113,7 @@ public class Script_nave1 : MonoBehaviour
         }
         else
         {
-            if (aceleracao > 5)
+            if (aceleracao > 1.5f)
             {
                 aceleracao -= 0.5f;
             }

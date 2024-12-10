@@ -5,8 +5,8 @@ using UnityEngine;
 public class comandaLuz : MonoBehaviour
 {
     private Light light1;
-    public float timerLight = 5f;
-    private float rangeTimer = 5f;
+    public float timerLight = 2f;
+    private float rangeTimer = 2f;
 
     // Start is called before the first frame update
     void Start()

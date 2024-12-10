@@ -11,6 +11,7 @@ TagManager:
   - cometa
   - light
   - TextCanvas
+  - spot
   layers:
   - Default
   - TransparentFX
