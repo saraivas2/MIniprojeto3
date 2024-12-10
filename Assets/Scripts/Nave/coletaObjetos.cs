@@ -6,11 +6,9 @@ using UnityEngine;
 public class coletaObjetos : MonoBehaviour
 {
     private GameObject objetos;
-    [SerializeField] private int countObj = 0;
+    public int countObj = 10;
     public bool coleta = false;
     private TextMeshProUGUI texto;
-
-
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +21,7 @@ public class coletaObjetos : MonoBehaviour
         {
             coleta = true;
             Destroy(other.gameObject);
+            
         }
     }
     // Update is called once per frame
@@ -34,7 +33,21 @@ public class coletaObjetos : MonoBehaviour
             coleta=false;
         }
         texto.text = "Objetos coletados: " + countObj.ToString();
+       
+        if (countObj == 10)
+        {
+            EndGame();
+         
+        }
     }
-    
+    void EndGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+
 
 }
